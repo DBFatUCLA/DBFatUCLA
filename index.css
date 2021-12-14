@@ -24,15 +24,22 @@ body
     background-color: blue;
 }
 
-#contents
+#landing-contents
 {
     flex: 9;
     overflow-y: scroll;
 
     display: flex;
     flex-direction: column;
+
+    background-image: url("assets/images/spruceFly_downsample.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-#bottom-bar
+.content-text-background
 {
+    background-color: rgba(0, 0, 0, 40%);
+    color: white;  /* Set the children's text color */
 }
