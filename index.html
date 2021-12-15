@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="index.css">
     <title>DBF at UCLA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="main-title-bar">
-        <img src="assets/images/logo.png" class="main-title-bar-logo">
-        <div class="main-title-bar-DBF">DBF @ UCLA</div>
-        <div class="main-title-bar-item">Competition</div>
-        <div class="main-title-bar-item">Teams</div>
+        <div class="main-title-bar-DBF" onclick="window.location.href = '.'">
+            <div class="main-title-bar-DBF-logo">
+                <img src="assets/images/logo.png" style="height: 80%;">
+            </div>
+            <div class="main-title-bar-DBF-text">DBF @ UCLA</div>
+        </div>
+        <div class="main-title-bar-item" onclick="window.location.href = 'competition.html'">Competition</div>
+        <div class="main-title-bar-item" onclick="window.location.href = 'teams.html'">Teams</div>
     </header>
     <div id="landing-contents">
         <div id="welcome-splash">Welcome to Design Build Fly at UCLA!</div>
