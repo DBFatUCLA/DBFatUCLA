@@ -151,13 +151,17 @@ body
     transition: opacity 700ms;
 }
 
-#welcome-splash:hover
+/* Needed to PREVENT the fade transition from happening on mobile. */
+@media (min-device-width: 700px)
 {
-    opacity: 0;
+    #welcome-splash:hover
+    {
+        opacity: 0;
+    }
 }
 
 /* Mobile landing page, make the gradient background smaller. */
-@media only screen and (max-device-width: 700px)
+@media (max-device-width: 700px)
 {
     #landing-contents
     {
@@ -214,7 +218,7 @@ body
     line-height: var(--text_line_height);
 }
 
-@media only screen and (max-device-width: 700px)
+@media (max-device-width: 700px)
 {
     .content-section-header
     {
