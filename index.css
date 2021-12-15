@@ -1,14 +1,23 @@
+/**
+ * Here we are defining some variables. You can access them via `var(--variable_name).`
+ * It just makes fine tuning them easier. Change in one place rather than all 7 different places.
+ */
 :root
 {
     --DBF_blue: rgb(196, 229, 252);
     --midnight_blue: rgb(25, 25, 112);
     --midnight_blue-highlight: rgb(165, 165, 236);
-    --dimmer: rgba(0, 0, 0, 40%);
+    --blue_dimmer: rgba(10, 65, 97, 0.6);
+    --gold_dimmer: rgb(179, 129, 20, 0.6);
 
     --text_vertical_padding: 10px;
     --text_horizontal_padding: 20px;
     --text_header_size: 25px;
     --text_size: 20px;
+    --text_line_height: 125%;
+
+    --text_mobile_vertical_padding: 15px;
+    --text_mobile_line_height: 150%;
 
     --title_bar_height: 75px;
     --title_bar_DBF_font_size: 40px;
@@ -38,7 +47,7 @@ body
 #main-title-bar
 {
     max-height: var(--title_bar_height);
-    width: 100%;
+    width: 100vw;
 
     background-color: var(--midnight_blue);
     color: white;
@@ -105,13 +114,12 @@ body
     cursor: pointer;
 }
 
-/* If the screen is too small, don't show the other items on the title bar. */
-@media only screen and (max-width: 700px)
+/* Mobile Title Bar */
+@media (max-device-width: 700px)
 {
     .main-title-bar-item
     {
-        width: 0;
-        font-size: 0;
+        display: none;
     }
 }
 
@@ -136,14 +144,29 @@ body
 
     text-align: center;
     font-weight: bold;
-    font-size: min(5vw, 80px);
+    font-size: min(7vw, 80px);
 
     color: white;
-    background-color: var(--dimmer);
+    background: linear-gradient(to bottom right, var(--blue_dimmer), var(--gold_dimmer));
+    transition: opacity 700ms;
 }
 
-@media only screen and (max-width: 700px)
+#welcome-splash:hover
 {
+    opacity: 0;
+}
+
+/* Mobile landing page, make the gradient background smaller. */
+@media only screen and (max-device-width: 700px)
+{
+    #landing-contents
+    {
+        overflow-y: scroll;
+
+        display: flex;
+        flex-direction: column;
+    }
+
     #welcome-splash
     {
         width: 100%;
@@ -155,7 +178,9 @@ body
         font-size: 60px;
 
         color: white;
-        background-color: var(--dimmer);
+        background: linear-gradient(to bottom right, var(--blue_dimmer), var(--gold_dimmer)),
+                url("assets/images/spruceFly_downsample.jpg") no-repeat center;
+        background-size: cover;
     }
 }
 
@@ -175,16 +200,35 @@ body
 
 .content-section-header
 {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: var(--text_vertical_padding);
+    margin-top: var(--text_vertical_padding);
     font-size: var(--text_header_size);
     font-weight: bold;
 }
 
 .content-section-text
 {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: var(--text_vertical_padding);
+    margin-top: var(--text_vertical_padding);
     font-size: var(--text_size);
-    line-height: 125%;
+    line-height: var(--text_line_height);
+}
+
+@media only screen and (max-device-width: 700px)
+{
+    .content-section-header
+    {
+        margin-bottom: var(--text_mobile_vertical_padding);
+        margin-top: var(--text_mobile_vertical_padding);
+        font-size: var(--text_header_size);
+        font-weight: bold;
+    }
+
+    .content-section-text
+    {
+        margin-bottom: var(--text_mobile_vertical_padding);
+        margin-top: var(--text_mobile_vertical_padding);
+        font-size: var(--text_size);
+        line-height: var(--text_mobile_line_height);
+    }
 }
