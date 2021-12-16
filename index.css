@@ -335,9 +335,7 @@ body
     color: white;
     filter: brightness(80%);
 
-    font-family: var(--font2);
-    font-size: var(--h1_fontsize);
-    font-weight: bold;
+    margin: 0;
 
     display: grid;
     align-items: center;
@@ -346,11 +344,32 @@ body
     transition: ease-in var(--transition_time_hover);
 }
 
+.teams-card h1
+{
+    font-family: var(--font2);
+    font-size: var(--h1_fontsize);
+    line-height: var(--text_line_height);
+    border-color: white;
+    font-weight: bold;
+}
+
+.teams-card p
+{
+    display: none;
+}
+
 .teams-card:hover
 {
     height: 200px;
     cursor: pointer;
     filter: brightness(100%) drop-shadow(0 0 2em white);
+}
+
+.teams-card:hover p
+{
+    display: block;
+    font-size: var(--h2_fontsize);
+    font-weight: normal;
 }
 
 /*************************
