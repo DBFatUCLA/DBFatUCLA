@@ -4,14 +4,18 @@
  */
 :root
 {
-    /* Colors picked from https://coolors.co/001219-005f73-0a9396-94d2bd-e9d8a6-ee9b00-ca6702-bb3e03-ae2012-9b2226 */
+    --blackish_blue: #0e0049;
+    --darkish_blue: #2774ae;
+    --medium_blue: #7fbce7;
+    --light_blue: #bce6ff;
+
     --content_color: #ffe5d9;  /* Slightly darker than the alt color */
     --content_alt_color: #f8edeb;
     --content_color_gradient: linear-gradient(to bottom right, var(--content_alt_color), var(--content_color));
-    --titlebar_color: #0e0049;
-    --titlebar_hover_color: #2774ae;
-    --navbar_background: #7fbce7;
-    --navbar_hover_background: #bce6ff;
+    --titlebar_color: var(--blackish_blue);
+    --titlebar_hover_color: var(--medium_blue);
+    --navbar_background: var(--darkish_blue);
+    --navbar_hover_background: var(--light_blue);
     --navbar_hover_text_color: #0e0049;
     --blue_dimmer: rgba(10, 65, 97, 0.6);
     --gold_dimmer: rgb(179, 129, 20, 0.6);
@@ -368,7 +372,7 @@ body
     grid-template-rows: auto 1fr;
     height: 200px;
     cursor: pointer;
-    filter: brightness(100%) grayscale(0%) drop-shadow(0 0 2em white);
+    filter: brightness(90%) grayscale(0%) drop-shadow(0 0 2em white);
 }
 
 .teams-card:hover p
