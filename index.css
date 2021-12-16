@@ -280,6 +280,11 @@ body
     }
 }
 
+.centered-image
+{
+    margin: auto;
+    display: block;
+}
 
 /*************************
 /* Teams Page(s) Content
