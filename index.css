@@ -22,6 +22,9 @@
     --h2_fontsize: 1.5em;
     --p_fontsize: 1em;
 
+    --navbar_vertical_padding: 1em;
+    --navbar_horizontal_padding: 2em;
+
     --text_vertical_padding: 10px;
     --text_horizontal_padding: 10vw;
     --text_header_size: 25px;
@@ -51,6 +54,7 @@ html
 
 body
 {
+    background-color: var(--content_color_gradient);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -63,10 +67,18 @@ body
 .vertical-scrollbar-section
 {
     overflow-y: auto;
+
+    /**
+     * This is only here to have `.gradient-background` flex-grow and fill up the page.
+     * Without it, too little content exposes the white background.
+     */
+    display: flex;
+    flex-direction: column;
 }
 
 .gradient-background
 {
+    flex-grow: 1;
     background: var(--content_color_gradient);
 }
 
@@ -256,6 +268,11 @@ body
     line-height: var(--text_line_height);
 }
 
+.content-section br
+{
+    height: 1em;
+}
+
 @media (max-device-width: 700px)
 {
     .content-section-header
@@ -307,7 +324,7 @@ body
     width: 100%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
 }
 
@@ -333,7 +350,7 @@ body
 {
     height: 200px;
     cursor: pointer;
-    filter: brightness(100%) drop-shadow(0 0 10px white);
+    filter: brightness(100%) drop-shadow(0 0 2em white);
 }
 
 /*************************
@@ -349,6 +366,7 @@ body
 
 #teams-navbar
 {
+    height: 100%;
     background-color: var(--navbar_background);
     color: white;
 
@@ -363,7 +381,7 @@ body
 .teams-navbar-item
 {
     font-size: var(--titlebar_font_size);
-    padding: var(--text_vertical_padding) var(--text_horizontal_padding);
+    padding: var(--navbar_vertical_padding) var(--navbar_horizontal_padding);
     transition: var(--transition_time_hover);
 
     /* Hovering over an item should span fully left to right. Text should also be center. */
