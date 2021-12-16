@@ -4,8 +4,10 @@
  */
 :root
 {
-    --content_color: #f8edeb;
-    --content_alt_color: #ffe5d9;
+    /* Colors picked from https://coolors.co/001219-005f73-0a9396-94d2bd-e9d8a6-ee9b00-ca6702-bb3e03-ae2012-9b2226 */
+    --content_color: #ffe5d9;  /* Slightly darker than the alt color */
+    --content_alt_color: #f8edeb;
+    --content_color_gradient: linear-gradient(to bottom right, var(--content_alt_color), var(--content_color));
     --titlebar_color: #0A9396;
     --titlebar_hover_color: #94D2BD;
     --navbar_background: #005F73;
@@ -14,13 +16,17 @@
     --blue_dimmer: rgba(10, 65, 97, 0.6);
     --gold_dimmer: rgb(179, 129, 20, 0.6);
 
+    --font2: "Fira Sans", sans-serif;
+    --font1: "Cambria", "Caladea", serif;
     --h1_fontsize: 2em;
+    --h2_fontsize: 1.5em;
+    --p_fontsize: 1em;
 
     --text_vertical_padding: 10px;
-    --text_horizontal_padding: 20px;
+    --text_horizontal_padding: 10vw;
     --text_header_size: 25px;
     --text_size: 20px;
-    --text_line_height: 125%;
+    --text_line_height: 2em;
 
     --text_mobile_vertical_padding: 15px;
     --text_mobile_line_height: 150%;
@@ -37,6 +43,7 @@
 html
 {
     font-family: "Fira Sans", "Fira Sans Book", "Arial", sans-serif;
+    font-size: 20px;
     margin: 0;
     width: 100%;
     height: 100vh;
@@ -51,6 +58,14 @@ body
 
     display: grid;
     grid-template-rows: auto 1fr;
+}
+
+.vertical-scrollbar-section
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 
@@ -134,6 +149,7 @@ body
 
 #landing-contents
 {
+    max-width: 100%;
     overflow-y: scroll;
 
     display: flex;
@@ -205,48 +221,39 @@ body
 .content-section
 {
     flex-grow: 1;
-    background-color: var(--content_color);
-    border-top: 2px solid darkgray;
+    background: var(--content_color_gradient);
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.content-section-alt-color
-{
-    flex-grow: 1;
-    background-color: var(--content_alt_color);
-    border-top: 2px solid darkgray;
-    padding: var(--text_vertical_padding) var(--text_horizontal_padding);
-}
-
-.content-section-header
+.content-section h1
 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
-    font-size: var(--text_header_size);
-    font-weight: bold;
-}
-
-.content-section h1, .content-section-alt-color h1
-{
-    margin-bottom: var(--text_vertical_padding);
-    margin-top: var(--text_vertical_padding);
+    border-bottom: 2px solid darkgray;
+    font-family: var(--font1);
     font-size: var(--h1_fontsize);
     font-weight: bold;
 }
 
-.content-section-text
+.content-section h2
 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
-    font-size: var(--text_size);
-    line-height: var(--text_line_height);
+    font-weight: lighter;
+    font-family: var(--font1);
+    font-size: var(--h2_fontsize);
 }
 
-.content-section p, .content-section li, .content-section-alt-color p, .content-section-alt-color li
+.content-section p, .content-section li
 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
-    font-size: var(--text_size);
+    font-family: var(--font2);
+    font-size: var(--p_fontsize);
     line-height: var(--text_line_height);
 }
 
@@ -260,7 +267,7 @@ body
         font-weight: bold;
     }
 
-    .content-section h1, .content-section-alt-color h1
+    .content-section h1
     {
         margin-bottom: var(--text_mobile_vertical_padding);
         margin-top: var(--text_mobile_vertical_padding);
@@ -290,6 +297,12 @@ body
     margin: auto;
     display: block;
 }
+
+
+/*************************
+/* Meet the team
+/*************************/
+
 
 /*************************
 /* Teams Page(s) Content
