@@ -321,7 +321,7 @@ body
 
 #teams-deck
 {
-    width: 100%;
+    padding: var(--text_vertical_padding) var(--text_horizontal_padding);
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -338,6 +338,7 @@ body
     margin: 0;
 
     display: grid;
+    grid-template-rows: 1fr;
     align-items: center;
     text-align: center;
 
@@ -346,20 +347,25 @@ body
 
 .teams-card h1
 {
+    margin: 0;
+    border-bottom: 2px solid white;
     font-family: var(--font2);
     font-size: var(--h1_fontsize);
     line-height: var(--text_line_height);
-    border-color: white;
     font-weight: bold;
 }
 
 .teams-card p
 {
+    margin: 0;
     display: none;
+    font-size: var(--h2_fontsize);
+    font-weight: normal;
 }
 
 .teams-card:hover
 {
+    grid-template-rows: 1fr 1fr;
     height: 200px;
     cursor: pointer;
     filter: brightness(100%) drop-shadow(0 0 2em white);
