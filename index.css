@@ -4,9 +4,13 @@
  */
 :root
 {
-    --DBF_blue: rgb(196, 229, 252);
-    --midnight_blue: rgb(25, 25, 112);
-    --midnight_blue-highlight: rgb(165, 165, 236);
+    --content_color: #f8edeb;
+    --content_alt_color: #ffe5d9;
+    --titlebar_color: #0A9396;
+    --titlebar_hover_color: #94D2BD;
+    --navbar_background: #005F73;
+    --navbar_hover_background: #001219;
+    --navbar_light_text: #E9D8A6;
     --blue_dimmer: rgba(10, 65, 97, 0.6);
     --gold_dimmer: rgb(179, 129, 20, 0.6);
 
@@ -21,10 +25,10 @@
     --text_mobile_vertical_padding: 15px;
     --text_mobile_line_height: 150%;
 
-    --title_bar_height: 75px;
-    --title_bar_DBF_font_size: 40px;
-    --title_bar_font_size: 25px;
-    --title_bar_horizontal_padding_between_items: 10px;
+    --titlebar_height: 75px;
+    --titlebar_DBF_font_size: 40px;
+    --titlebar_font_size: 25px;
+    --titlebar_horizontal_padding_between_items: 10px;
 
     --transition_time: 700ms;
     --transition_time_hover: 300ms;
@@ -56,10 +60,11 @@ body
 
 #main-title-bar
 {
-    max-height: var(--title_bar_height);
+    min-height: var(--titlebar_height);
+    max-height: var(--titlebar_height);
     width: 100vw;
 
-    background-color: var(--midnight_blue);
+    background-color: var(--titlebar_color);
     color: white;
 
     display: flex;
@@ -70,7 +75,7 @@ body
 .main-title-bar-DBF
 {
     padding-right: 15px;
-    font-size: var(--title_bar_DBF_font_size);
+    font-size: var(--titlebar_DBF_font_size);
     color: white;
     transition: var(--transition_time_hover);
 
@@ -82,10 +87,8 @@ body
 
 .main-title-bar-DBF-logo
 {
-    margin: 0 var(--title_bar_horizontal_padding_between_items);
-    max-width: var(--title_bar_height);  /* Only here to appease Firefox. */
-    height: 100%;
-    aspect-ratio: 1;
+    padding: 0 var(--titlebar_horizontal_padding_between_items);
+    width: calc(var(--titlebar_height) - 10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,14 +104,14 @@ body
 
 .main-title-bar-DBF:hover
 {
-    background-color: var(--midnight_blue-highlight);
+    background-color: var(--titlebar_hover_color);
     cursor: pointer;
 }
 
 .main-title-bar-item
 {
-    padding: 0 var(--title_bar_horizontal_padding_between_items);
-    font-size: var(--title_bar_font_size);
+    padding: 0 var(--titlebar_horizontal_padding_between_items);
+    font-size: var(--titlebar_font_size);
     color: white;
     transition: 0.3s;
 
@@ -120,7 +123,7 @@ body
 
 .main-title-bar-item:hover
 {
-    background-color: var(--midnight_blue-highlight);
+    background-color: var(--titlebar_hover_color);
     cursor: pointer;
 }
 
@@ -201,14 +204,16 @@ body
 
 .content-section
 {
-    background-color: var(--DBF_blue);
+    flex-grow: 1;
+    background-color: var(--content_color);
     border-top: 2px solid darkgray;
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
 }
 
 .content-section-alt-color
 {
-    background-color: white;
+    flex-grow: 1;
+    background-color: var(--content_alt_color);
     border-top: 2px solid darkgray;
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
 }
@@ -299,7 +304,7 @@ body
 
 #teams-navbar
 {
-    background-color: black;
+    background-color: var(--navbar_background);
     color: white;
 
     overflow-y: auto;
@@ -312,7 +317,7 @@ body
 
 .teams-navbar-item
 {
-    font-size: var(--title_bar_font_size);
+    font-size: var(--titlebar_font_size);
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
     transition: var(--transition_time_hover);
 
@@ -325,8 +330,8 @@ body
 
 .teams-navbar-item:hover
 {
-    background-color: white;
-    color: black;
+    background-color: var(--navbar_hover_background);
+    color: var(--navbar_light_text);
     cursor: pointer;
 }
 
