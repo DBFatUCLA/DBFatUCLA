@@ -10,6 +10,8 @@
     --blue_dimmer: rgba(10, 65, 97, 0.6);
     --gold_dimmer: rgb(179, 129, 20, 0.6);
 
+    --h1_fontsize: 2em;
+
     --text_vertical_padding: 10px;
     --text_horizontal_padding: 20px;
     --text_header_size: 25px;
@@ -23,6 +25,9 @@
     --title_bar_DBF_font_size: 40px;
     --title_bar_font_size: 25px;
     --title_bar_horizontal_padding_between_items: 10px;
+
+    --transition_time: 700ms;
+    --transition_time_hover: 300ms;
 }
 
 html
@@ -43,6 +48,7 @@ body
     display: grid;
     grid-template-rows: auto 1fr;
 }
+
 
 /**********************
 /* Title Bar
@@ -66,7 +72,7 @@ body
     padding-right: 15px;
     font-size: var(--title_bar_DBF_font_size);
     color: white;
-    transition: 0.3s;
+    transition: var(--transition_time_hover);
 
     height: 100%;
     display: flex;
@@ -118,14 +124,6 @@ body
     cursor: pointer;
 }
 
-/* Mobile Title Bar */
-@media (max-device-width: 700px)
-{
-    .main-title-bar-item
-    {
-        display: none;
-    }
-}
 
 /**************************
 /* Landing Page
@@ -156,7 +154,7 @@ body
 
     color: white;
     background: linear-gradient(to bottom right, var(--blue_dimmer), var(--gold_dimmer));
-    transition: opacity 700ms;
+    transition: opacity var(--transition_time);
 }
 
 /* Needed to PREVENT the fade transition from happening on mobile. */
@@ -196,6 +194,7 @@ body
     }
 }
 
+
 /***************************
 /* Text Content
 /***************************/
@@ -222,7 +221,23 @@ body
     font-weight: bold;
 }
 
+.content-section h1, .content-section-alt-color h1
+{
+    margin-bottom: var(--text_vertical_padding);
+    margin-top: var(--text_vertical_padding);
+    font-size: var(--h1_fontsize);
+    font-weight: bold;
+}
+
 .content-section-text
+{
+    margin-bottom: var(--text_vertical_padding);
+    margin-top: var(--text_vertical_padding);
+    font-size: var(--text_size);
+    line-height: var(--text_line_height);
+}
+
+.content-section p, .content-section li, .content-section-alt-color p, .content-section-alt-color li
 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
@@ -240,6 +255,14 @@ body
         font-weight: bold;
     }
 
+    .content-section h1, .content-section-alt-color h1
+    {
+        margin-bottom: var(--text_mobile_vertical_padding);
+        margin-top: var(--text_mobile_vertical_padding);
+        font-size: var(--h1_fontsize);
+        font-weight: bold;
+    }
+
     .content-section-text
     {
         margin-bottom: var(--text_mobile_vertical_padding);
@@ -247,7 +270,16 @@ body
         font-size: var(--text_size);
         line-height: var(--text_mobile_line_height);
     }
+
+    .content-section p, .content-section li, .content-section-alt-color p, .content-section-alt-color li
+    {
+        margin-bottom: var(--text_mobile_vertical_padding);
+        margin-top: var(--text_mobile_vertical_padding);
+        font-size: var(--text_size);
+        line-height: var(--text_mobile_line_height);
+    }
 }
+
 
 /*************************
 /* Teams Page(s) Content
@@ -266,6 +298,8 @@ body
     color: white;
 
     overflow-y: auto;
+    overflow-x: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -274,6 +308,21 @@ body
 .teams-navbar-item
 {
     font-size: var(--title_bar_font_size);
+    padding: var(--text_vertical_padding) var(--text_horizontal_padding);
+    transition: var(--transition_time_hover);
+
+    /* Hovering over an item should span fully left to right. Text should also be center. */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teams-navbar-item:hover
+{
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }
 
 #teams-text-section
