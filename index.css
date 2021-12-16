@@ -44,6 +44,10 @@ body
     grid-template-rows: auto 1fr;
 }
 
+/**********************
+/* Title Bar
+/**********************/
+
 #main-title-bar
 {
     max-height: var(--title_bar_height);
@@ -123,6 +127,10 @@ body
     }
 }
 
+/**************************
+/* Landing Page
+/**************************/
+
 #landing-contents
 {
     overflow-y: scroll;
@@ -188,6 +196,10 @@ body
     }
 }
 
+/***************************
+/* Text Content
+/***************************/
+
 .content-section
 {
     background-color: var(--DBF_blue);
@@ -235,4 +247,38 @@ body
         font-size: var(--text_size);
         line-height: var(--text_mobile_line_height);
     }
+}
+
+/*************************
+/* Teams Page(s) Content
+/*************************/
+
+#teams-content
+{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    overflow-y: auto;
+}
+
+#teams-navbar
+{
+    background-color: black;
+    color: white;
+
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teams-navbar-item
+{
+    font-size: var(--title_bar_font_size);
+}
+
+#teams-text-section
+{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
