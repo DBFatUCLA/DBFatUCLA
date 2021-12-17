@@ -26,6 +26,8 @@
     --h2_fontsize: 1.5em;
     --p_fontsize: 1em;
 
+    --navbar_folded_width: 4em;
+    --navbar_extended_width: 15em;
     --navbar_vertical_padding: 1em;
     --navbar_horizontal_padding: 2em;
 
@@ -62,7 +64,6 @@ body
     margin: 0;
     padding: 0;
     height: 100vh;
-    max-height: 100vh;
 
     display: grid;
     grid-template-rows: auto 1fr;
@@ -388,14 +389,16 @@ body
 
 #teams-content
 {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    margin-left: var(--navbar_folded_width);
     overflow-y: auto;
 }
 
 #teams-navbar
 {
-    height: 100%;
+    position: fixed;
+    width: var(--navbar_folded_width);
+    /* Fixed means its height is actually the viewport's height. */
+    height: calc(100% - var(--titlebar_height));
     background-color: var(--navbar_background);
     color: white;
 
@@ -405,6 +408,15 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    transition: ease var(--transition_time_hover);
+}
+
+#teams-navbar:hover
+{
+    justify-content: normal;
+    width: var(--navbar_extended_width);
 }
 
 .teams-navbar-item
@@ -413,8 +425,13 @@ body
     padding: var(--navbar_vertical_padding) var(--navbar_horizontal_padding);
     transition: var(--transition_time_hover);
 
-    /* Hovering over an item should span fully left to right. Text should also be center. */
+    display: none;
     width: 100%;
+}
+
+#teams-navbar:hover .teams-navbar-item
+{
+    /* Hovering over an item should span fully left to right. Text should also be center. */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -427,9 +444,19 @@ body
     cursor: pointer;
 }
 
-#teams-text-section
+.teams-navbar-item:last-child
 {
-    overflow-y: auto;
+    font-size: var(--titlebar_font_size);
+    padding: var(--navbar_vertical_padding) var(--navbar_horizontal_padding);
+    transition: var(--transition_time_hover);
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#teams-navbar:hover .teams-navbar-item:last-child
+{
+    display: none;
 }

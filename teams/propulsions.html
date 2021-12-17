@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <header id="main-title-bar">
@@ -21,7 +22,7 @@
         <div class="main-title-bar-item" onclick="window.location.href = '../competition.html'">Competition</div>
         <div class="main-title-bar-item" onclick="window.location.href = 'teams-all.html'">Teams</div>
     </header>
-    <div id="teams-content">
+    <div class="vertical-scrollbar-section">
         <div id="teams-navbar">
             <div class="teams-navbar-item" onclick="window.location.href='aerodynamics.html'">Aerodynamics</div>
             <div class="teams-navbar-item" onclick="window.location.href='cad.html'">CAD</div>
@@ -31,22 +32,27 @@
             <div class="teams-navbar-item" onclick="window.location.href='rd.html'">R&D</div>
             <div class="teams-navbar-item" onclick="window.location.href='pilot.html'">Pilot</div>
             <div class="teams-navbar-item" onclick="window.location.href='other.html'">Other</div>
+            <div class="teams-navbar-item" onclick="window.location.href='other.html'">
+                <i class="material-icons" style="font-size: var(--h1_fontsize); transform: rotate(-90deg)">expand_more</i>
+            </div>
         </div>
-        <div class="vertical-scrollbar-section">
-            <div class="gradient-background">
-                <div class="content-section" style="align-items: normal">
-                    <h1>Propulsions and Electronics Subteam</h1>
-                    <img src="../assets/images/PropElect1.jpg" class="centered-image">
-                    <br>
-                    <h1>Development Responsibilities</h1>
-                    <p>The Propulsion & Electronics team is responsible for selecting and testing the electric propulsion system components for the aircraft. We also set up any other electronics for the aircraft, such as servo actuators and the receiver/transmitter.</p>
-                    <img src="../assets/images/propelect.png" class="centered-image">
-                    <br>
-                    <h1>Flight Day Responsibilities</h1>
-                    <p>Before flight, the propulsions and electronics team selects the appropriate propeller and tests the response of the servos that power the control surfaces (flaps, ailerons, elevator and rudder) and other mechanisms, such as our banner deployment mechanism last year.</p>
-                    <br>
-                    <h1>Testing Methods</h1>
-                    <p>We rely on a mixture of theoretical and practical methods to test the propulsion systems, including static thrust testing in the lab. The propulsion and electronics subteam relies on software such as MATLAB and eCalc to aid with the design and implementation of the propulsion and electronics systems.</p>
+        <div id="teams-content">
+            <div class="vertical-scrollbar-section">
+                <div class="gradient-background">
+                    <div class="content-section" style="align-items: normal">
+                        <h1>Propulsions and Electronics Subteam</h1>
+                        <img src="../assets/images/PropElect1.jpg" class="centered-image">
+                        <br>
+                        <h1>Development Responsibilities</h1>
+                        <p>The Propulsion & Electronics team is responsible for selecting and testing the electric propulsion system components for the aircraft. We also set up any other electronics for the aircraft, such as servo actuators and the receiver/transmitter.</p>
+                        <img src="../assets/images/propelect.png" class="centered-image">
+                        <br>
+                        <h1>Flight Day Responsibilities</h1>
+                        <p>Before flight, the propulsions and electronics team selects the appropriate propeller and tests the response of the servos that power the control surfaces (flaps, ailerons, elevator and rudder) and other mechanisms, such as our banner deployment mechanism last year.</p>
+                        <br>
+                        <h1>Testing Methods</h1>
+                        <p>We rely on a mixture of theoretical and practical methods to test the propulsion systems, including static thrust testing in the lab. The propulsion and electronics subteam relies on software such as MATLAB and eCalc to aid with the design and implementation of the propulsion and electronics systems.</p>
+                    </div>
                 </div>
             </div>
         </div>
