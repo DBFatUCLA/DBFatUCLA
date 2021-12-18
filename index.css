@@ -8,6 +8,7 @@
     --darkish_blue: #2774ae;
     --medium_blue: #7fbce7;
     --light_blue: #bce6ff;
+    --gold: #ffd100;
 
     --content_color: #ffe5d9;  /* Slightly darker than the alt color */
     --content_alt_color: #f8edeb;
@@ -43,7 +44,7 @@
     --titlebar_height: 90px;
     --titlebar_DBF_font_size: 2em;
     --titlebar_font_size: 1.2em;
-    --titlebar_horizontal_padding_between_items: 10px;
+    --titlebar_horizontal_padding_between_items: 1em;
 
     --transition_time: 700ms;
     --transition_time_hover: 300ms;
@@ -121,7 +122,7 @@ body
 
 .main-title-bar-DBF-logo
 {
-    padding: 0 var(--titlebar_horizontal_padding_between_items);
+    padding: 0 15px;
     width: 65px;
     display: flex;
     flex-direction: column;
@@ -131,9 +132,13 @@ body
 .main-title-bar-DBF-text
 {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    color: var(--gold);
+    font-weight: bold;
+
+    /* `white-space: nowrap` forces the div to continue consuming width for text. */
+    white-space: nowrap;
+    display: grid;
+    place-items: center;
 }
 
 .main-title-bar-DBF:hover
