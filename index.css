@@ -323,6 +323,8 @@ body
 {
     margin: auto;
     display: block;
+    max-width: 80%;
+    height: auto;
 }
 
 
