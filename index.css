@@ -259,15 +259,18 @@ body
     font-family: var(--font1);
     font-size: var(--h1_fontsize);
     font-weight: bold;
+    text-align: center;
 }
 
 .content-section h2
 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
+    border-bottom: 1px solid darkgray;
     font-weight: lighter;
     font-family: var(--font1);
     font-size: var(--h2_fontsize);
+    font-weight: bold;
 }
 
 .content-section p, .content-section li
@@ -485,4 +488,17 @@ body
 #teams-navbar:hover .teams-navbar-item:last-child
 {
     display: none;
+}
+
+
+.column {
+  float: left;
+  width: 48%;
+  padding: 1px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
