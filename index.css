@@ -374,24 +374,33 @@ body
 .teams-card p
 {
     margin: 0;
-    display: none;
     font-size: var(--h2_fontsize);
     font-weight: normal;
 }
 
-.teams-card:hover
+@media (hover: hover)
 {
-    grid-template-rows: auto 1fr;
-    height: 200px;
-    cursor: pointer;
-    filter: brightness(90%) grayscale(0%) drop-shadow(0 0 2em white);
+
+    .teams-card:hover
+    {
+        grid-template-rows: auto 1fr;
+        height: 200px;
+        cursor: pointer;
+        filter: brightness(90%) grayscale(0%) drop-shadow(0 0 2em white);
+    }
+
+    .teams-card:not(:hover) p
+    {
+        display: none;
+    }
 }
 
-.teams-card:hover p
+@media (hover: none)
 {
-    display: block;
-    font-size: var(--h2_fontsize);
-    font-weight: normal;
+    .teams-card
+    {
+        filter: none;
+    }
 }
 
 /*************************
