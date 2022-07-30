@@ -8,15 +8,15 @@
     --darkish_blue: #2774ae;
     --medium_blue: #7fbce7;
     --light_blue: #bce6ff;
-    --gold: #ffd100;
+    --gold: #d9b71e;
 
-    --content_color: #ffe5d9;  /* Slightly darker than the alt color */
-    --content_alt_color: #f8edeb;
+    --content_color: #e8f5fc;  /* Slightly darker than the alt color */
+    --content_alt_color: #faf4f2;
     --content_color_gradient: linear-gradient(to bottom right, var(--content_alt_color), var(--content_color));
-    --titlebar_color: var(--blackish_blue);
-    --titlebar_hover_color: var(--medium_blue);
-    --navbar_background: var(--darkish_blue);
-    --navbar_hover_background: var(--light_blue);
+    --titlebar_color: var(--light_blue);
+    --titlebar_hover_color: var(--darkish_blue);
+    --navbar_background: var(--light_blue);
+    --navbar_hover_background: var(--darkish_blue);
     --navbar_hover_text_color: #0e0049;
     --blue_dimmer: rgba(10, 65, 97, 0.6);
     --gold_dimmer: rgb(179, 129, 20, 0.6);
@@ -61,7 +61,7 @@ html
 
 body
 {
-    background-color: var(--content_color_gradient);
+    background-color: var(--content_color);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -86,7 +86,7 @@ body
 .gradient-background
 {
     flex-grow: 1;
-    background: var(--content_color_gradient);
+    background: var(--content_color);
 }
 
 /**********************
@@ -100,7 +100,7 @@ body
     width: 100vw;
 
     background-color: var(--titlebar_color);
-    color: white;
+    color: var(--gold);
 
     display: flex;
     flex-direction: row;
@@ -111,7 +111,7 @@ body
 {
     padding-right: 15px;
     font-size: var(--titlebar_DBF_font_size);
-    color: white;
+    color: var(--gold);
     transition: var(--transition_time_hover);
 
     height: 100%;
@@ -151,7 +151,7 @@ body
 {
     padding: 0 var(--titlebar_horizontal_padding_between_items);
     font-size: var(--titlebar_font_size);
-    color: white;
+    color: black;
     transition: 0.3s;
 
     height: 100%;
@@ -173,31 +173,31 @@ body
 
 #landing-contents
 {
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-
-    background-image: url("assets/images/spruceFly_downsample.jpg");
+    
+    background-image: url("assets/images/Background_Lazarus.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
-#welcome-splash
+ #welcome-splash
 {
     width: 100%;
-    padding-top: 35vh;
-    padding-bottom: 35vh;
-
+    padding-top: 5vh;
+    padding-bottom: 40vh;
+    
     text-align: center;
     font-weight: bold;
-    font-size: min(7vw, 80px);
+    font-size: 4vw;
 
     color: white;
-    background: linear-gradient(to bottom right, var(--blue_dimmer), var(--gold_dimmer));
-    transition: opacity ease-in var(--transition_time);
-}
+    transition: ease-in var(--transition_time);
+} 
 
 /* Needed to PREVENT the fade transition from happening on mobile. */
 @media (min-device-width: 700px)
@@ -222,16 +222,13 @@ body
     #welcome-splash
     {
         width: 100%;
-        padding-top: 15vh;
-        padding-bottom: 15vh;
-
+      
         text-align: center;
         font-weight: bold;
         font-size: 60px;
 
         color: white;
-        background: linear-gradient(to bottom right, var(--blue_dimmer), var(--gold_dimmer)),
-                url("assets/images/spruceFly_downsample.jpg") no-repeat center;
+        background: url("assets/images/Background_Lazarus.jpg") no-repeat center;
         background-size: cover;
     }
 }
