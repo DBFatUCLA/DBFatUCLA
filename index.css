@@ -508,3 +508,24 @@ body
   clear: both;
   display: table;
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+  }
+
+  .box {
+    border: none;
+    text-align: center;
+    align-items: center;
+  }
+
+  .box img {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+
