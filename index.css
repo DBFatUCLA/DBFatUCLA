@@ -2,8 +2,7 @@
  * Here we are defining some variables. You can access them via `var(--variable_name).`
  * It just makes fine tuning them easier. Change in one place rather than all 7 different places.
  */
-:root
-{
+:root {
     --blackish_blue: #0e0049;
     --darkish_blue: #2774ae;
     --medium_blue: #7fbce7;
@@ -50,8 +49,7 @@
     --transition_time_hover: 300ms;
 }
 
-html
-{
+html {
     font-family: "Fira Sans", "Arial", sans-serif;
     font-size: 20px;
     margin: 0;
@@ -59,8 +57,7 @@ html
     height: 100vh;
 }
 
-body
-{
+body {
     background-color: var(--content_color);
     margin: 0;
     padding: 0;
@@ -70,8 +67,7 @@ body
     grid-template-rows: auto 1fr;
 }
 
-.vertical-scrollbar-section
-{
+.vertical-scrollbar-section {
     overflow-y: auto;
 
     /**
@@ -83,8 +79,7 @@ body
     flex-direction: column;
 }
 
-.gradient-background
-{
+.gradient-background {
     flex-grow: 1;
     background: var(--content_color);
 }
@@ -93,8 +88,7 @@ body
 /* Title Bar
 /**********************/
 
-#main-title-bar
-{
+#main-title-bar {
     min-height: var(--titlebar_height);
     max-height: var(--titlebar_height);
     width: 100vw;
@@ -107,8 +101,7 @@ body
     align-items: center;
 }
 
-.main-title-bar-DBF
-{
+.main-title-bar-DBF {
     padding-right: 15px;
     font-size: var(--titlebar_DBF_font_size);
     color: var(--gold);
@@ -120,8 +113,7 @@ body
     align-items: center;
 }
 
-.main-title-bar-DBF-logo
-{
+.main-title-bar-DBF-logo {
     padding: 0 15px;
     width: 65px;
     display: flex;
@@ -129,8 +121,7 @@ body
     justify-content: center;
 }
 
-.main-title-bar-DBF-text
-{
+.main-title-bar-DBF-text {
     height: 100%;
     color: var(--gold);
     font-weight: bold;
@@ -141,14 +132,12 @@ body
     place-items: center;
 }
 
-.main-title-bar-DBF:hover
-{
+.main-title-bar-DBF:hover {
     background-color: var(--titlebar_hover_color);
     cursor: pointer;
 }
 
-.main-title-bar-item
-{
+.main-title-bar-item {
     padding: 0 var(--titlebar_horizontal_padding_between_items);
     font-size: var(--titlebar_font_size);
     color: black;
@@ -160,8 +149,7 @@ body
     justify-content: center;
 }
 
-.main-title-bar-item:hover
-{
+.main-title-bar-item:hover {
     background-color: var(--titlebar_hover_color);
     cursor: pointer;
 }
@@ -171,8 +159,7 @@ body
 /* Landing Page
 /**************************/
 
-#landing-contents
-{
+#landing-contents {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -185,8 +172,7 @@ body
     
 }
 
- #welcome-splash
-{
+#welcome-splash {
     width: 100%;
     padding-top: 5vh;
     padding-bottom: 40vh;
@@ -200,29 +186,24 @@ body
 } 
 
 /* Needed to PREVENT the fade transition from happening on mobile. */
-@media (min-device-width: 700px)
-{
-    #welcome-splash:hover
-    {
+@media (min-device-width: 700px) {
+    #welcome-splash:hover {
         opacity: 0;
     }
 }
 
 /* Mobile landing page, make the gradient background smaller. */
-@media (max-device-width: 700px)
-{
-    #landing-contents
-    {
+@media (max-device-width: 700px) {
+    #landing-contents {
         overflow-y: scroll;
 
         display: flex;
         flex-direction: column;
     }
 
-    #welcome-splash
-    {
+    #welcome-splash {
         width: 100%;
-      
+        
         text-align: center;
         font-weight: bold;
         font-size: 60px;
@@ -238,8 +219,7 @@ body
 /* Text Content
 /***************************/
 
-.content-section
-{
+.content-section {
     flex-grow: 1;
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
 
@@ -248,8 +228,7 @@ body
     align-items: center;
 }
 
-.content-section h1
-{
+.content-section h1 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
     border-bottom: 2px solid darkgray;
@@ -259,8 +238,7 @@ body
     text-align: center;
 }
 
-.content-section h2
-{
+.content-section h2 {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
     border-bottom: 1px solid darkgray;
@@ -270,8 +248,7 @@ body
     font-weight: bold;
 }
 
-.content-section p, .content-section li
-{
+.content-section p, .content-section li {
     margin-bottom: var(--text_vertical_padding);
     margin-top: var(--text_vertical_padding);
     font-family: var(--font2);
@@ -279,39 +256,33 @@ body
     line-height: var(--text_line_height);
 }
 
-.content-section br
-{
+.content-section br {
     height: 1em;
 }
 
-@media (max-device-width: 700px)
-{
-    .content-section-header
-    {
+@media (max-device-width: 700px) {
+    .content-section-header {
         margin-bottom: var(--text_mobile_vertical_padding);
         margin-top: var(--text_mobile_vertical_padding);
         font-size: var(--text_header_size);
         font-weight: bold;
     }
 
-    .content-section h1
-    {
+    .content-section h1 {
         margin-bottom: var(--text_mobile_vertical_padding);
         margin-top: var(--text_mobile_vertical_padding);
         font-size: var(--h1_fontsize);
         font-weight: bold;
     }
 
-    .content-section-text
-    {
+    .content-section-text {
         margin-bottom: var(--text_mobile_vertical_padding);
         margin-top: var(--text_mobile_vertical_padding);
         font-size: var(--text_size);
         line-height: var(--text_mobile_line_height);
     }
 
-    .content-section p, .content-section li, .content-section-alt-color p, .content-section-alt-color li
-    {
+    .content-section p, .content-section li, .content-section-alt-color p, .content-section-alt-color li {
         margin-bottom: var(--text_mobile_vertical_padding);
         margin-top: var(--text_mobile_vertical_padding);
         font-size: var(--text_size);
@@ -319,8 +290,7 @@ body
     }
 }
 
-.centered-image
-{
+.centered-image {
     margin: auto;
     display: block;
     max-width: 80%;
@@ -332,8 +302,7 @@ body
 /* Meet the team
 /*************************/
 
-#teams-deck
-{
+#teams-deck {
     padding: var(--text_vertical_padding) var(--text_horizontal_padding);
     display: grid;
     gap: 1rem;
@@ -341,8 +310,7 @@ body
     align-items: center;
 }
 
-.teams-card
-{
+.teams-card {
     height: 170px;
     border-radius: 14px;
     color: white;
@@ -358,8 +326,7 @@ body
     transition: ease-in var(--transition_time_hover);
 }
 
-.teams-card h1
-{
+.teams-card h1 {
     margin: 0;
     border-bottom: 2px solid white;
     font-family: var(--font2);
@@ -368,34 +335,28 @@ body
     font-weight: bold;
 }
 
-.teams-card p
-{
+.teams-card p {
     margin: 0;
     font-size: var(--h2_fontsize);
     font-weight: normal;
 }
 
-@media (hover: hover)
-{
+@media (hover: hover) {
 
-    .teams-card:hover
-    {
+    .teams-card:hover {
         grid-template-rows: auto 1fr;
         height: 200px;
         cursor: pointer;
         filter: brightness(90%) grayscale(0%) drop-shadow(0 0 2em white);
     }
 
-    .teams-card:not(:hover) p
-    {
+    .teams-card:not(:hover) p {
         display: none;
     }
 }
 
-@media (hover: none)
-{
-    .teams-card
-    {
+@media (hover: none) {
+    .teams-card {
         filter: none;
     }
 }
@@ -404,15 +365,13 @@ body
 /* Teams Page(s) Content
 /*************************/
 
-#teams-content
-{
+#teams-content {
     margin-left: var(--navbar_folded_width);
     height: 100%;
     overflow-y: auto;
 }
 
-#teams-navbar
-{
+#teams-navbar {
     position: fixed;
     width: var(--navbar_folded_width);
     /* Fixed means its height is actually the viewport's height. */
@@ -431,14 +390,12 @@ body
     transition: ease var(--transition_time_hover);
 }
 
-#teams-navbar:hover
-{
+#teams-navbar:hover {
     justify-content: normal;
     width: var(--navbar_extended_width);
 }
 
-.teams-navbar-item
-{
+.teams-navbar-item {
     font-size: var(--titlebar_font_size);
     padding: var(--navbar_vertical_padding) var(--navbar_horizontal_padding);
     transition: var(--transition_time_hover);
@@ -451,36 +408,30 @@ body
  * Clicking in mobile will BOTH hover and click on a team despite the team not present.
  * Disable for mobile because this behaviour is annoying.
  */
-@media (max-device-width: 700px)
-{
-    #teams-navbar
-    {
+@media (max-device-width: 700px) {
+    #teams-navbar {
         display: none;
     }
 
-    #teams-content
-    {
+    #teams-content {
         margin-left: 0;
     }
 }
 
-#teams-navbar:hover .teams-navbar-item
-{
+#teams-navbar:hover .teams-navbar-item {
     /* Hovering over an item should span fully left to right. Text should also be center. */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.teams-navbar-item:hover
-{
+.teams-navbar-item:hover {
     background-color: var(--navbar_hover_background);
     color: var(--navbar_hover_text_color);
     cursor: pointer;
 }
 
-.teams-navbar-item:last-child
-{
+.teams-navbar-item:last-child {
     font-size: var(--titlebar_font_size);
     padding: var(--navbar_vertical_padding) var(--navbar_horizontal_padding);
     transition: var(--transition_time_hover);
@@ -491,22 +442,21 @@ body
     align-items: center;
 }
 
-#teams-navbar:hover .teams-navbar-item:last-child
-{
+#teams-navbar:hover .teams-navbar-item:last-child {
     display: none;
 }
 
 
 .column {
-  float: left;
-  width: 48%;
-  padding: 1px;
+    float: left;
+    width: 48%;
+    padding: 1px;
 }
 
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .container {
@@ -514,18 +464,18 @@ body
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
     align-items: center;
-  }
+}
 
-  .box {
+.box {
     border: none;
     text-align: center;
     align-items: center;
-  }
+}
 
-  .box img {
+.box img {
     width: 100%;
     height: 100%;
     align-items: center;
-  }
+}
 
 
