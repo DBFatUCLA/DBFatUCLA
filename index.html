@@ -9,10 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caladea&family=Fira+Sans&display=swap" rel="stylesheet">
+    <script>
+      let timesClicked = 0;
+      function easterEgg() {
+          if (5 < timesClicked++)
+              window.location.href="https://www.youtube.com/watch?v=atT3lE8PsUo";
+      }
+    </script>
   </head>
   <body>
     <header id="main-title-bar">
-      <div class="main-title-bar-DBF" onclick="window.location.href='index.html'">
+      <div class="main-title-bar-DBF" onclick="easterEgg()">
         <div class="main-title-bar-DBF-logo">
           <img src="assets/images/logo.png">
         </div>
