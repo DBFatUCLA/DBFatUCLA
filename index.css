@@ -106,6 +106,7 @@ body {
     font-size: var(--titlebar_DBF_font_size);
     color: var(--gold);
     transition: var(--transition_time_hover);
+    text-shadow: 0px 0px 0px blackish_blue; 
 
     height: 100%;
     display: flex;
