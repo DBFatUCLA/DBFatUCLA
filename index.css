@@ -184,6 +184,7 @@ body {
 
     color: white;
     transition: ease-in var(--transition_time);
+    text-shadow: -1px -1px 0px #000000; 
 } 
 
 /* Needed to PREVENT the fade transition from happening on mobile. */
